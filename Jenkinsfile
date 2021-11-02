@@ -114,7 +114,9 @@ pipeline {
                 }
             }
         }
-
+    stage ('Starting Ansible job') {
+	   build job: 'Deploy-to-staging-Ansible', parameters: [[$class: 'StringParameterValue', name: 'ID', value: ARTVERSION]]
+    }
 
     }
 
