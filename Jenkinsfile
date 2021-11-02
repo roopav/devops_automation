@@ -146,7 +146,11 @@ EOT'''
 	   build job: 'Deploy-to-staging-Ansible', parameters: [[$class: 'StringParameterValue', name: 'ID', value: ARTVERSION]]
       }
     }
-
+    stage ('Starting Software Testing job') {
+      steps {
+	   build job: 'Software-testing'
+      }
+    }
     }
 
 
